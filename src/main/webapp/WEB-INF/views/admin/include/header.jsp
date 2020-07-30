@@ -107,19 +107,19 @@ if('${msg}' != ""){
               </li>
               
               <li class="nav-item has-treeview">
-                <a href="/admin/board/list" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>게시판관리</p>
                 </a>
 	            <ul class="nav nav-treeview">
 		              <li class="nav-item">
-		                <a href="#" class="nav-link">
+		                <a href="/admin/board/list?searchBoard=notice" class="nav-link">
 		                  <i class="far fa-circle nav-icon"></i>
 		                  <p>공지사항</p>
 		                </a>
 		              </li>
 		              <li class="nav-item">
-		                <a href="#" class="nav-link">
+		                <a href="/admin/board/list?searchBoard=gallery" class="nav-link">
 		                  <i class="far fa-circle nav-icon"></i>
 		                  <p>겔러리</p>
 		                </a>

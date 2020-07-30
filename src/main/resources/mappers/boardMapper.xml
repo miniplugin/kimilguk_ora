@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			writer LIKE '%'||#{searchKeyword}||'%'
 			)
 		</if>
-		<if test="searchBoard !=null">
+		<if test="searchBoard !=null and !searchBoard.equals('')">
 			AND (
 			bod_type = #{searchBoard}
 			)
