@@ -109,7 +109,9 @@ if('${msg}' != ""){
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>게시판관리</p>
+                  <p>게시판관리
+                  	<i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
 	            <ul class="nav nav-treeview">
 		              <li class="nav-item">

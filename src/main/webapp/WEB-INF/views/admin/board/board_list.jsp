@@ -31,8 +31,8 @@
                 <div class="col-3" style="display:inline-block" >
                     <select name="searchBoard" class="form-control">
                       <option value="">게시판선택</option>
-                      <option value="notice">공지사항</option>
-                      <option value="gallery">겔러리</option>
+                      <option value="notice" <c:out value="${(pageVO.searchBoard eq 'notice')?('selected'):('')}" />>공지사항</option>
+                      <option value="gallery" <c:out value="${(pageVO.searchBoard eq 'gallery')?('selected'):('')}" />>겔러리</option>
                     </select>
                 </div>
                 <div class="col-3" style="display:inline-block" >
@@ -74,18 +74,20 @@
                       <th>WRITE</th>
                       <th>REGDATE</th>
                       <th>VIEWCNT</th>
+                      <th>게시판타입</th>
                     </tr>
                   </thead>
                   <tbody>
                     <c:forEach items="${boardList}" var="boardVO" varStatus="status">
                     <tr>
                       <td>${boardVO.bno}</td>
-                      <td><a href="/admin/board/view?bno=${boardVO.bno}&page=${pageVO.page}">${boardVO.title}</a></td>
+                      <td><a href="/admin/board/view?bno=${boardVO.bno}&page=${pageVO.page}&searchBoard=${pageVO.searchBoard}">${boardVO.title}</a></td>
                       <td>${boardVO.writer}</td>
                       <td><span class="tag tag-success">
                       <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" />
                       </span></td>
                       <td><span class="badge badge-danger right">${boardVO.view_count}</span></td>
+                      <td>${boardVO.bod_type}</td>
                     </tr>
                     </c:forEach>
                   </tbody>
