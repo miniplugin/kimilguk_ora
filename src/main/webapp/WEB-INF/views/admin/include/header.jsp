@@ -75,7 +75,7 @@ if('${msg}' != ""){
           <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">User02
+          <a href="#" class="d-block">${session_username} 님
           <span class="right badge badge-danger">Online</span>
           </a>
         </div>
