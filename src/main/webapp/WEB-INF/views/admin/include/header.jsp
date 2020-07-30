@@ -90,6 +90,7 @@ if('${msg}' != ""){
               <p>사용자 홈</p>
             </a>
           </li>
+          
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -104,14 +105,31 @@ if('${msg}' != ""){
                   <p>회원관리</p>
                 </a>
               </li>
-              <li class="nav-item">
+              
+              <li class="nav-item has-treeview">
                 <a href="/admin/board/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>게시판관리</p>
                 </a>
+	            <ul class="nav nav-treeview">
+		              <li class="nav-item">
+		                <a href="#" class="nav-link">
+		                  <i class="far fa-circle nav-icon"></i>
+		                  <p>공지사항</p>
+		                </a>
+		              </li>
+		              <li class="nav-item">
+		                <a href="#" class="nav-link">
+		                  <i class="far fa-circle nav-icon"></i>
+		                  <p>겔러리</p>
+		                </a>
+		              </li>
+	            </ul>
               </li>
+              
             </ul>
           </li>
+        
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
