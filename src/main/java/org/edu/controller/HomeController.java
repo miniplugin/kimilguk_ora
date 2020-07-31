@@ -137,7 +137,13 @@ public class HomeController {
 	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/board/view", method = RequestMethod.GET)
-	public String boardView(@ModelAttribute("pageVO") PageVO pageVO, @RequestParam("bno") Integer bno,Locale locale, Model model) throws Exception {
+	public String boardView(@ModelAttribute("pageVO") PageVO pageVO, @RequestParam("bno") Integer bno,Locale locale, Model model, HttpServletRequest request) throws Exception {
+		HttpSession session = request.getSession();
+		if(pageVO.getSearchBoard() != null) {
+			session.setAttribute("session_bod_type", pageVO.getSearchBoard());
+		} else {
+			pageVO.setSearchBoard((String) session.getAttribute("session_bod_type"));
+		}
 		BoardVO boardVO = boardService.viewBoard(bno);
 		//여기서 부터 첨부파일명 때문에 추가
 		List<String> files = boardService.selectAttach(bno);
