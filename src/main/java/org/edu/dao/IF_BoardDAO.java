@@ -2,10 +2,12 @@ package org.edu.dao;
 
 import java.util.List;
 
+import org.edu.vo.BoardTypeVO;
 import org.edu.vo.BoardVO;
 import org.edu.vo.PageVO;
 
 public interface IF_BoardDAO {
+	public List<BoardTypeVO> selectBoardType() throws Exception;
 	public int selectTopBno() throws Exception;
 	public void deleteBoardReply(Integer bno) throws Exception;
 	public void insertBoard(BoardVO boardVO) throws Exception;

@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.edu.dao.IF_BoardDAO;
 import org.edu.dao.IF_MemberDAO;
+import org.edu.vo.BoardTypeVO;
 import org.edu.vo.BoardVO;
 import org.edu.vo.MemberVO;
 import org.edu.vo.PageVO;
@@ -73,6 +74,11 @@ public class BoardServiceImpl implements IF_BoardService {
 	@Override
 	public int countBno(PageVO pageVO) throws Exception {
 		return boardDAO.countBno(pageVO);
+	}
+
+	@Override
+	public List<BoardTypeVO> selectBoardType() throws Exception {
+		return boardDAO.selectBoardType();
 	}
 
 }
