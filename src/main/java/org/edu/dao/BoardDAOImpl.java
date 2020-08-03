@@ -96,5 +96,20 @@ public class BoardDAOImpl implements IF_BoardDAO {
 		return sqlSession.selectList(mapperQuery + ".selectBoardType");
 	}
 
+	@Override
+	public void deleteBoardType(String bod_type) throws Exception {
+		sqlSession.delete(mapperQuery + ".deleteBoardType", bod_type);
+	}
+
+	@Override
+	public void updateBoardType(BoardTypeVO boardTypeVO) throws Exception {
+		sqlSession.update(mapperQuery + ".updateBoardType", boardTypeVO);
+	}
+
+	@Override
+	public void insertBoardType(BoardTypeVO boardTypeVO) throws Exception {
+		sqlSession.insert(mapperQuery + ".insertBoardType", boardTypeVO);
+	}
+
 	
 }

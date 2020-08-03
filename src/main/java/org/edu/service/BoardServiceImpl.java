@@ -81,4 +81,19 @@ public class BoardServiceImpl implements IF_BoardService {
 		return boardDAO.selectBoardType();
 	}
 
+	@Override
+	public void deleteBoardType(String bod_type) throws Exception {
+		boardDAO.deleteBoardType(bod_type);
+	}
+
+	@Override
+	public void updateBoardType(BoardTypeVO boardTypeVO) throws Exception {
+		boardDAO.updateBoardType(boardTypeVO);
+	}
+
+	@Override
+	public void insertBoardType(BoardTypeVO boardTypeVO) throws Exception {
+		boardDAO.insertBoardType(boardTypeVO);
+	}
+
 }
