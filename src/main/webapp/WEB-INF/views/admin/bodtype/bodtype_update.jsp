@@ -40,27 +40,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
               
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>bod_sun</th>
-                      <th>bod_type</th>
-                      <th>bod_name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <c:forEach items="${bodTypeList}" var="boardTypeVO" varStatus="status">
-                    <tr>
-                      <td>${boardTypeVO.bod_sun}</td>
-                      <td><a href="/admin/bodtype/update?bod_type=${boardTypeVO.bod_type}">${boardTypeVO.bod_type}</a></td>
-                      <td>${boardTypeVO.bod_name}</td>
-                    </tr>
-                    </c:forEach>
-                  </tbody>
-            <td> <a href="/admin/bodtype/write" class="btn btn-primary">게시판생성</a>
-               </td>
-           
-                </table>
+              
               
               </div>
               <!-- /.card-body -->
