@@ -48,6 +48,27 @@ public class AdminController {
 	private FileDataUtil fileDataUtil;
 	
 	/**
+	 * 게시판생성 insert 입니다.
+	 * @throws Exception 
+	 */
+	@RequestMapping(value = "/bodtype/write", method = RequestMethod.GET)
+	public String bodTypeInsert(Locale locale, Model model) throws Exception {
+		
+		return "admin/bodtype/bodtype_insert";
+	}
+	
+	/**
+	 * 게시판생성 Insert 입니다.
+	 * @throws Exception 
+	 */
+	@RequestMapping(value = "/bodtype/write", method = RequestMethod.POST)
+	public String bodTypeInsert(BoardTypeVO boardTypeVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		boardService.insertBoardType(boardTypeVO);
+		rdat.addFlashAttribute("msg", "입력");
+		return "redirect:/admin/bodtype/list";
+	}
+	
+	/**
 	 * 게시판생성 수정 입니다.
 	 * @throws Exception 
 	 */

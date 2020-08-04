@@ -41,16 +41,15 @@
               <div class="card-body table-responsive p-0">
               
               
-							<form role="form" action="/admin/bodtype/update" method="post">
+							<form role="form" action="/admin/bodtype/write" method="post">
 								<div class="row">
 									
 									<div class="col-sm-12">
 										<!-- text input -->
 										<div class="form-group">
 											<label>보드타입</label> 
-											${bodTypeVO.bod_type}
-											<input value="${bodTypeVO.bod_type}" name="bod_type" type="hidden" class="form-control"
-												placeholder="Enter Title">
+											<input value="${bodTypeVO.bod_type}" name="bod_type" type="text" class="form-control"
+												placeholder="게시판 타입을 입력해 주세요" required>
 										</div>
 									</div>
 									<div class="col-sm-12">
@@ -65,7 +64,7 @@
 										<!-- text input -->
 										<div class="form-group">
 											<label>출력순서</label>
-											<input value="${bodTypeVO.bod_sun}" name="bod_sun" type="text" class="form-control"
+											<input value="0" name="bod_sun" type="text" class="form-control"
 												placeholder="출력순서는 숫자로 입력해주세요.">
 										</div>
 									</div>
