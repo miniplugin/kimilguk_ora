@@ -51,6 +51,7 @@
 											<input id="bod_type" value="" name="bod_type" type="text" class="form-control"
 												placeholder="게시판 타입을 입력해 주세요" required>
 										</div>
+										<span id="msg_validation"></span>
 									</div>
 									<div class="col-sm-12">
 										<!-- text input -->
@@ -104,9 +105,12 @@ $(document).ready(function(){
 			success:function(result){
 				//alert(result);//디버그용
 				if(result=='1'){
-					alert('기존 게시판이 존재합니다.');
+					//alert('기존 게시판이 존재합니다.');
+					$("#msg_validation").text("기존 게시판이 존재합니다.");
+					$("#msg_validation").css({"color":"red","font-size":"14px"});
 					$("#submit_check").attr("disabled",true);
 				}else{
+					$("#msg_validation").text("사용 가능한 게시판 입니다.");
 					$("#submit_check").attr("disabled",false);
 				}
 			},
