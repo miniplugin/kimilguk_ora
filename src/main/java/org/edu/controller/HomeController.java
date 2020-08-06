@@ -19,6 +19,7 @@ import org.edu.util.FileDataUtil;
 import org.edu.vo.BoardVO;
 import org.edu.vo.MemberVO;
 import org.edu.vo.PageVO;
+import org.hsqldb.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -97,6 +98,9 @@ public class HomeController {
 		}		
 		memberService.updateMember(memberVO);
 		rdat.addFlashAttribute("msg", "회원정보 수정");
+		//회원이름 세션변수 변경처리 session_username
+		HttpSession session = null;
+		session.setAttribute("session_username", memberVO.getUser_name());
 		return "redirect:/mypage/update";
 	}
 	
