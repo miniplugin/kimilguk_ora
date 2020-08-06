@@ -27,7 +27,7 @@
 							<ul class="reg_list">
 								<li class="clear">
 									<span class="tit_lbl">아이디</span>
-									<div class="reg_content" style="padding-top:8px;">${memberVO.user_id}</div>
+									<div class="reg_content">${memberVO.user_id}</div>
 									<input value="${memberVO.user_id}" name="user_id" type="hidden" class="w100p" id="name_lbl" placeholder="아이디를 입력해주세요"/>
 								</li>
 								<li class="clear">
@@ -50,21 +50,21 @@
 								</li>
 								<li class="clear">
 									<label class="tit_lbl">포인트</label>
-									<div class="reg_content" style="padding-top:8px;">
+									<div class="reg_content">
 									${memberVO.point}
 									<input value="${memberVO.point}" name="point" type="hidden" class="w100p" placeholder="포인트를 입력해주세요"/>
 									</div>
 								</li>
 								<li class="clear">
 									<label class="tit_lbl">사용여부</label>
-									<div class="reg_content" style="padding-top:8px;">
+									<div class="reg_content">
 									${memberVO.enabled}
 									<input value="${memberVO.enabled}" name="enabled" type="hidden" class="w100p" placeholder="포인트를 입력해주세요"/>
 									</div>
 								</li>
 								<li class="clear">
 									<label class="tit_lbl">회원등급</label>
-									<div class="reg_content" style="padding-top:8px;">
+									<div class="reg_content">
 									${memberVO.levels}
 									<input value="${memberVO.levels}" name="levels" type="hidden" class="w100p" placeholder="포인트를 입력해주세요"/>
 									</div>

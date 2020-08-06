@@ -28,9 +28,9 @@
 								<li class="clear">
 									<span class="tit_lbl user_id">아이디</span>
 									<div class="reg_content" style="padding-top:8px;">
-									<input value="${memberVO.user_id}" name="user_id" type="text" class="w100p" id="user_id" placeholder="아이디를 입력해주세요"/>
-									</div>
+									<input required value="${memberVO.user_id}" name="user_id" type="text" class="w100p" id="user_id" placeholder="아이디를 입력해주세요"/>
 									<span id="validation_idcheck"></span>
+									</div>
 								</li>
 								<li class="clear">
 									<label class="tit_lbl">패스워드</label>
@@ -41,7 +41,7 @@
 								<li class="clear">
 									<label class="tit_lbl">이름</label>
 									<div class="reg_content" style="padding-top:8px;">
-									<input value="${memberVO.user_name}" name="user_name" type="text" class="w100p" placeholder="이름을 입력해주세요"/>
+									<input required value="${memberVO.user_name}" name="user_name" type="text" class="w100p" placeholder="이름을 입력해주세요"/>
 									</div>
 								</li>
 								<li class="clear">
@@ -57,9 +57,10 @@
 									
 							</ul>
 							<p class="btn_line">
-							<button class="btn_baseColor" style="cursor:pointer">회원가입</button>
+							<button disabled id="btn_submit" class="btn_baseColor" style="cursor:cursor;opacity:0.5;">회원가입</button>
 							</p>	
 						</fieldset>
+						
 					</form>
 					<!-- //appForm -->
 			
@@ -74,7 +75,23 @@ $(document).ready(function(){
 		var user_id = $(this).val();
 		$.ajax({
 			type:'get',
-			url:'/'
+			url:'/admin/member/idcheck?user_id=' + user_id,
+			success:function(result){
+				if(result=='1') {//중복아이디가 존재할때
+					$("#btn_submit").attr("disabled",true);
+					$("#btn_submit").css({"cursor":"cursor","opacity":"0.5"});
+					$("#validation_idcheck").text("중복 아이디가 존재 합니다.");
+					$("#validation_idcheck").css({"color":"red","font-size":"14px"});
+				}else{//중복아이디가 존재하지 않을때
+					$("#btn_submit").attr("disabled",false);
+					$("#btn_submit").css({"cursor":"pointer","opacity":"1"});
+					$("#validation_idcheck").text("사용가능한 아이디 입니다.");
+					$("#validation_idcheck").css({"color":"red","font-size":"14px"});
+				}
+			},
+			error:function(){
+				alert("아이디체크 RestAPI서버가 작동하지 않습니다.");
+			}
 		});
 	});
 });
