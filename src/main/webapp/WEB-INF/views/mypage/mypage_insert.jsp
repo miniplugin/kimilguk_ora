@@ -26,10 +26,11 @@
 							<legend>내정보 입력 양식</legend>
 							<ul class="reg_list">
 								<li class="clear">
-									<span class="tit_lbl">아이디</span>
+									<span class="tit_lbl user_id">아이디</span>
 									<div class="reg_content" style="padding-top:8px;">
-									<input value="${memberVO.user_id}" name="user_id" type="text" class="w100p" id="name_lbl" placeholder="아이디를 입력해주세요"/>
+									<input value="${memberVO.user_id}" name="user_id" type="text" class="w100p" id="user_id" placeholder="아이디를 입력해주세요"/>
 									</div>
+									<span id="validation_idcheck"></span>
 								</li>
 								<li class="clear">
 									<label class="tit_lbl">패스워드</label>
@@ -67,4 +68,15 @@
 
 	</div>
 	<!-- //container -->
+<script>
+$(document).ready(function(){
+	$("#user_id").blur(function(){
+		var user_id = $(this).val();
+		$.ajax({
+			type:'get',
+			url:'/'
+		});
+	});
+});
+</script>
 <%@ include file="../include/footer.jsp" %>
